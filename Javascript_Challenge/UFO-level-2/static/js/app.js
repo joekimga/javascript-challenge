@@ -34,20 +34,36 @@ function runEnter(data) {
   });
 }
 
-function filterData() {
+var filterDictionary = {}; 
+function filterUpdate() {
     // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#datetime");
+    var inputElement = d3.select(this).select("input");
 
-  // Get the value property of the input element
-  var inputValue = inputElement.property("value");
+    // Get the value property of the input element
+    var inputValue = inputElement.property("value");  
+
+    var filterID = inputElement.attr("id");
+
+    if (inputValue){
+      filterDictionary[filterID] = inputValue;
+    }
+    else {
+      delete filterDictionary[filterID];
+    }
+    filterData();
+}
+
+
+function filterData() {
   let filteredData = tableData;
-  console.log(inputValue);
-  console.log(tableData);
-  if (inputValue) {
-    filteredData = tableData.filter(row => row.datetime === inputValue);
-  }
+  
+  // console.log(inputValue);
+  // console.log(tableData);
+  Object.entries(filterDictionary).forEach(([key, val]) => {
+    filteredData = filteredData.filter(row => row[key] === val);
+  });
   runEnter(filteredData);
 }
 
-d3.selectAll("#filter-btn").on("click", filterData);
+d3.selectAll(".filter").on("change", filterUpdate);
 runEnter(tableData);
