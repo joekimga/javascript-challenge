@@ -7,7 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/custom.css">
 </head>
 
 <body>
@@ -36,10 +42,12 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-
+                        <!-- <label for="date">Enter a Date</label> -->
+                        <a href="#" data-toggle="tooltip" title="Choose dates between 1/1/2010 - 1/13/2010">Enter a Date</a>
                         <!------------------  INPUT HERE  ---------------------->  
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+
+                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2010">
+
                       </li>
                     </ul>
                   </div>
@@ -77,6 +85,8 @@
 
   <!------- Audio ------->
   <embed src="The_X_Files_theme.mp3" loop="true" autostart="true" width="2" height="0">
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
   <script src="static/js/data.js"></script>
