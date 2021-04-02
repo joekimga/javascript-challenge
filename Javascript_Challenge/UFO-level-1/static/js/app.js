@@ -26,10 +26,11 @@ function runEnter(data) {
 
   data.forEach((rowData) => {
     var row = tbody.append("tr");
+    // var row = row.toLowerCase();
 
     Object.values(rowData).forEach((value) => {
       var cell = row.append("td");
-      cell.text(value);
+      cell.html(value);
     });
   });
 }

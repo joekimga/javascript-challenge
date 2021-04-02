@@ -29,7 +29,7 @@ function runEnter(data) {
 
     Object.values(rowData).forEach((value) => {
       var cell = row.append("td");
-      cell.text(value);
+      cell.html(value);
     });
   });
 }
@@ -42,10 +42,11 @@ function filterUpdate() {
     // Get the value property of the input element
     var inputValue = inputElement.property("value");  
 
+
     var filterID = inputElement.attr("id");
 
     if (inputValue){
-      filterDictionary[filterID] = inputValue;
+      filterDictionary[filterID] = inputValue.lowerCase();
     }
     else {
       delete filterDictionary[filterID];

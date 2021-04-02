@@ -4,8 +4,8 @@
 //     border-bottom: 1px dotted black;
 //   }
   
-.tooltip {font-size:larger;
-}
+// .tooltip {font-size:larger;
+// }
 
 
 
