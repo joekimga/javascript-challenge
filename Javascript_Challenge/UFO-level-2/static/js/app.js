@@ -46,7 +46,7 @@ function filterUpdate() {
     var filterID = inputElement.attr("id");
 
     if (inputValue){
-      filterDictionary[filterID] = inputValue.lowerCase();
+      filterDictionary[filterID] = inputValue.toLowerCase();
     }
     else {
       delete filterDictionary[filterID];
